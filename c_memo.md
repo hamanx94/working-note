@@ -14,8 +14,7 @@ char IsFileExist(char *filename)
 {
     struct stat buf;
     int ret;
-
-    errno = 0;
+    
     ret = stat(filename, &buf);
     if (ret) 
         return (0);	
