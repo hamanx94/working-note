@@ -1,8 +1,53 @@
 # Catalog
+* [sys/stat.h](#sysstath)
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
 ***
+
+## sys/stat.h
+
+```cpp
+#include <sys/stat.h>
+
+char IsFileExist(char *filename) 
+{
+    struct stat buf;
+    int ret;
+
+    errno = 0;
+    ret = stat(filename, &buf);
+    if (ret) 
+        return (0);	
+    
+    return (1);
+}
+
+unsigned long GetFileSize(char *filename) 
+{
+    struct stat buf;
+
+    if (stat(f, &buf) == -1)
+        return 0;
+        
+    return buf.st_size;
+}
+
+char IsFolderExist(char *filename) 
+{
+    struct stat buf;
+    int ret;
+    
+    ret = stat(filename, &buf);
+    if(ret || !S_ISDIR(buf.st_mode))
+        return (0);
+        
+    return(1);
+}
+```
+[Top](#Catalog) 
+***
+
 ## folder content
 
 ```cpp
@@ -28,8 +73,8 @@
     return 0;
 ```
 [Top](#Catalog) 
-
 ***
+
 ## create folder
 
 ```cpp
@@ -75,8 +120,8 @@ BOOL MakeDir(BYTE *pFilePath)
 
 ```
 [Top](#Catalog) 
-
 ***
+
 ## blocking/non-blocking
 ```cpp
     #include <fcntl.h>
