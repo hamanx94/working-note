@@ -1,8 +1,24 @@
 # Catalog
+* [define](#define)
 * [sys/stat.h](#sysstath)
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
+***
+
+## define
+
+```cpp
+#define PRINT_MSG(msg, args...)         do {printf(msg, ##args);} while(0)
+#define PRINT_BUFFER(str, buf, len)     do { \
+                                            unsigned long i; \
+                                            unsigned char *ptr; \
+                                            ptr = (unsigned char *)buf; \
+                                            printf("[ %s ] len %ld\n", str, (unsigned long)len); \
+                                            for(i = 0 ; i < len ; i++) printf("%02X", ptr[i]); printf("\r\n"); \
+                                        } while(0)
+```
+[Top](#Catalog) 
 ***
 
 ## sys/stat.h
@@ -52,6 +68,8 @@ char IsFolderExist(char *filename)
 ```cpp
 #include <dirent.h>
 
+bool FolderContent(char *path)
+{
     DIR *d;
     struct dirent *dir;
     d = opendir(path);
@@ -75,6 +93,7 @@ char IsFolderExist(char *filename)
         break;
     }
     return 0;
+}
 ```
 [Top](#Catalog) 
 ***
@@ -130,11 +149,11 @@ bool MakeDir(char *pFilePath)
 ```cpp
     #include <fcntl.h>
 
-    /* 將socket設定為non-blocking */
+    /* set socket as non-blocking */
     int flags = fcntl(socket, F_GETFL, 0); 
     fcntl(socket, F_SETFL, flags | O_NONBLOCK);
 
-    /* 將socket設定為blocking */
+    /* set socket as blocking */
     int  flags  =  fcntl(socket,  F_GETFL,  0);
     fcntl(socket,  F_SETFL,  flags  |  ~O_NONBLOCK);
 ```
