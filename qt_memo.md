@@ -1,4 +1,5 @@
 # Catalog
+* [QSettings](#QSettings)
 * [Add dll](#add-dll)
 * [QTextBrowser](#QTextBrowser)
 * [QTimer::singleShot](#QTimersingleShot)
@@ -6,6 +7,25 @@
 * [QSqlDatabase - MySql](#QSqlDatabase---MySql)
 * [QFileDialog](#QFileDialog)
 
+## QSettings 
+```cpp
+    /* save */
+    QSettings setting("./setting.ini", QSettings::IniFormat);
+    setting.setValue("Port", 1234);
+    setting.setValue("IP", "127.0.0.1");    
+    
+    /* read */
+    int port;
+    QString ip;
+    if(QFile::exists("./setting.ini"))
+    {
+        QSettings setting("./setting.ini", QSettings::IniFormat);
+        port = setting.value("Port").toInt();
+        ip = setting.value("IP").toString();
+    }
+```
+[Top](#Catalog) 
+***
 ## add dll   
 ```c++
 LIBS += $$PWD/xxx.dlll
