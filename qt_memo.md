@@ -4,7 +4,7 @@
 * [QTimer::singleShot](#QTimersingleShot)
 * [Qt::BlockingQueuedConnection](#QtBlockingQueuedConnection)
 * [QSqlDatabase - MySql](#QSqlDatabase---MySql)
-
+* [QFileDialog](#QFileDialog)
 
 ## add dll   
 ```c++
