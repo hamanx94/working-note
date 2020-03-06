@@ -50,6 +50,8 @@ char IsFolderExist(char *filename)
 ## folder content
 
 ```cpp
+#include <dirent.h>
+
     DIR *d;
     struct dirent *dir;
     d = opendir(path);
@@ -64,7 +66,10 @@ char IsFolderExist(char *filename)
             {
                 continue;
             }
-            printf("filename: %s\n", dir->d_name);
+            if(dir->d_type == DT_DIR)
+                printf("folder: %s\n", dir->d_name);
+            else
+                printf("filename: %s\n", dir->d_name);
         }
         closedir(d);
         break;
@@ -79,17 +84,17 @@ char IsFolderExist(char *filename)
 ```cpp
 #include <dirent.h>
 
-BOOL MakeDir(BYTE *pFilePath)
+bool MakeDir(char *pFilePath)
 {
     char DirName[256];
     strcpy(DirName, pFilePath);
     int i, len = strlen(DirName);
 
     if(strlen(pFilePath) == 0 || strcmp(pFilePath, "./") == 0)
-        return TRUE;
+        return true;
 
     if(pFilePath[0] != '.' || pFilePath[1] != '/')
-        return FALSE;
+        return false;
 
 
     if(DirName[len - 1] != '/')
@@ -107,14 +112,14 @@ BOOL MakeDir(BYTE *pFilePath)
             {
                 if(errno != EEXIST)
                 {
-                    return FALSE;
+                    return false;
                 }
             }
             DirName[i] = '/';
         }
     }
 
-    return TRUE;
+    return true;
 }
 
 ```
