@@ -12,7 +12,7 @@
 Processes all pending events for the calling thread according to the specified flags until<br>
 there are no more events to process.<br>
 <br>
-<font color="#660000">You can call this function occasionally when your program is busy performing a long operation</font><br>
+You can call this function occasionally when your program is busy performing a long operation<br>
 (e.g. copying a file).<br>
 [Top](#Catalog)  
 ***
