@@ -1,4 +1,5 @@
 # Catalog
+* [QCoreApplication::processEvents()](#QCoreApplicationprocessEvents)
 * [QSettings](#QSettings)
 * [Add dll](#add-dll)
 * [QTextBrowser](#QTextBrowser)
@@ -6,6 +7,15 @@
 * [Qt::BlockingQueuedConnection](#QtBlockingQueuedConnection)
 * [QSqlDatabase - MySql](#QSqlDatabase---MySql)
 * [QFileDialog](#QFileDialog)
+
+## QCoreApplication::processEvents()
+Processes all pending events for the calling thread according to the specified flags until<br>
+there are no more events to process.<br>
+<br>
+<font color="#660000">You can call this function occasionally when your program is busy performing a long operation</font><br>
+(e.g. copying a file).<br>
+[Top](#Catalog)  
+***
 
 ## QSettings 
 ```cpp
