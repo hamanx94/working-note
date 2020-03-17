@@ -38,7 +38,7 @@ You can call this function occasionally when your program is busy performing a l
 ***
 ## add dll   
 ```c++
-LIBS += $$PWD/xxx.dlll
+LIBS += $$PWD/xxx.dll
 ```  
 [Top](#Catalog) 
 ***
