@@ -9,7 +9,7 @@
 
 ## Volatile變數
 在程式設計中，尤其是在C語言、C++、C#和Java語言中，使用volatile關鍵字聲明的變數或物件通常具有與最佳化、多執行緒相關的特殊屬性<br>
-[Wiki Volatile變數](#https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F)<br>
+[Wiki Volatile變數](https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F)<br>
 [Top](#Catalog) 
 ***
 
