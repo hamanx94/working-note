@@ -1,9 +1,16 @@
 # Catalog
+* [Volatile變數](#Volatile變數)
 * [define](#define)
 * [sys/stat.h](#sysstath)
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
+***
+
+## Volatile變數
+在程式設計中，尤其是在C語言、C++、C#和Java語言中，使用volatile關鍵字聲明的變數或物件通常具有與最佳化、多執行緒相關的特殊屬性<br>
+<br>
+[Top](#Catalog) 
 ***
 
 ## define
