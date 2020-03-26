@@ -55,6 +55,22 @@ unsigned long GetFileSize(char *filename)
     return buf.st_size;
 }
 
+long GetFileSize(char *filename)
+{
+    FILE *fp;
+    long len;
+
+    fp = fopen(filename, "rb");
+    if(fp == NULL)
+        return 0;
+
+    fseek(fp, 0, SEEK_END);
+    len = ftell(fp);
+    fclose(fp);
+
+    return len;
+}
+
 char IsFolderExist(char *filename) 
 {
     struct stat buf;
