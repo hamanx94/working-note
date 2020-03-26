@@ -49,7 +49,7 @@ unsigned long GetFileSize(char *filename)
 {
     struct stat buf;
 
-    if (stat(f, &buf) == -1)
+    if (stat(filename, &buf) == -1)
         return 0;
         
     return buf.st_size;
