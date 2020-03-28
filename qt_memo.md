@@ -69,7 +69,8 @@ QTimer::singleShot(1000, this, SLOT(xxx_func()));
 ***
 ## Qt::BlockingQueuedConnection
 Same as Qt::QueuedConnection, except that the signalling thread blocks until the slot returns. This connection must not be used if the receiver lives in the signalling thread, or else the application will deadlock.  
-[reference] https://ramihaha.tw/program-qt-connection-multithread/  
+[reference]<br> 
+    https://ramihaha.tw/program-qt-connection-multithread/  
 [Top](#Catalog) 
 ***
 ## QSqlDatabase - MySql
