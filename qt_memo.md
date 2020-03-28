@@ -95,12 +95,18 @@ Same as Qt::QueuedConnection, except that the signalling thread blocks until the
 ## QFileDialog
 - Select Files
 ```cpp
-QString qsFile = QFileDialog::getOpenFileName(this, "Select Update File", QDesktopServices::storageLocation(QDesktopServices::DesktopLocation), "*.zip");
+QString qsFile = QFileDialog::getOpenFileName(this, "Select Update File", 
+                                              QDesktopServices::storageLocation(QDesktopServices::DesktopLocation), 
+                                              "*.zip");
 QStringList qslFile = QFileDialog::getOpenFileNames...
 ```
 - Save File
 ```cpp
-QString qsFileName = QFileDialog::getSaveFileName(this, "Save Test Scrip", QApplication::applicationDirPath(), "*.clscrip", 0);
+QString qsFileName = QFileDialog::getSaveFileName(this, 
+                                                  "Save Test Scrip", 
+                                                  QApplication::applicationDirPath(), 
+                                                  "*.clscrip", 
+                                                  0);
 
 ```
 - Select Folder
