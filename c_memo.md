@@ -1,6 +1,6 @@
 # Catalog
 
-* [va_list, va_start, vsnprintf, va_end](#va_listva_startvsnprintfva_end)
+* [va_list, va_start, vsnprintf, va_end](#valist-vastart-vsnprintf-vaend)
 * [Volatile變數](#Volatile變數)
 * [define](#define)
 * [sys/stat.h](#sysstath)
