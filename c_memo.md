@@ -1,16 +1,53 @@
 # Catalog
+
+* [va_list, va_start, vsnprintf, va_end](#va_listva_startvsnprintfva_end)
 * [Volatile變數](#Volatile變數)
 * [define](#define)
 * [sys/stat.h](#sysstath)
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
+
+***
+
+## va_list, va_start, vsnprintf, va_end
+
+```cpp
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+
+void PrintMsg(const char *format, ...){
+
+    va_list args;
+    char *buf;
+    int length;
+
+    va_start(args, format);
+    length = vsnprintf(NULL, 0, format, args);
+    va_end(args);
+
+    va_start(args, format);
+    buf=(char *)malloc(length + 1);
+    vsnprintf(buf, length, format, args);
+    va_end(args);
+    
+    printf("[xxx]: %s", buf);
+    free(buf);
+}
+```
+[Top](#Catalog)
+
 ***
 
 ## Volatile變數
+
 在程式設計中，尤其是在C語言、C++、C#和Java語言中，使用volatile關鍵字聲明的變數或物件通常具有與最佳化、多執行緒相關的特殊屬性<br>
-[Wiki Volatile變數](https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F)<br>
+[Wiki Volatile變數](https://zh.wikipedia.org/wiki/Volatile%E5%8F%98%E9%87%8F)
+
 [Top](#Catalog) 
+
 ***
 
 ## define
@@ -26,6 +63,7 @@
                                         } while(0)
 ```
 [Top](#Catalog) 
+
 ***
 
 ## sys/stat.h
@@ -84,6 +122,7 @@ char IsFolderExist(char *filename)
 }
 ```
 [Top](#Catalog) 
+
 ***
 
 ## folder content
@@ -119,6 +158,7 @@ bool FolderContent(char *path)
 }
 ```
 [Top](#Catalog) 
+
 ***
 
 ## create folder
@@ -166,6 +206,7 @@ bool MakeDir(char *pFilePath)
 
 ```
 [Top](#Catalog) 
+
 ***
 
 ## blocking/non-blocking
