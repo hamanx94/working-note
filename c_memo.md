@@ -1,5 +1,6 @@
 # Catalog
 
+* [localtime](#localtime)
 * [va_list, va_start, vsnprintf, va_end](#va_list-va_start-vsnprintf-va_end)
 * [Volatile變數](#Volatile變數)
 * [define](#define)
@@ -7,6 +8,26 @@
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
+
+***
+
+## localtime
+
+```cpp
+QString getLocalDate()
+{
+    time_t now;
+
+    time(&now);
+    struct tm *localnow = localtime(&now);
+
+    return QString::asprintf("%04d-%02d-%02d", 
+                             localnow->tm_year + 1900, 
+                             localnow->tm_mon + 1, 
+                             localnow->tm_mday);
+}
+```
+[Top](#Catalog)
 
 ***
 
