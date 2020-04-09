@@ -1,5 +1,5 @@
 # Catalog
-* [IPv6 to IPv4](#IPv6toIPv4)
+* [IPv6 to IPv4](#IPv6-to-IPv4)
 * [QCoreApplication::processEvents()](#QCoreApplicationprocessEvents)
 * [QSettings](#QSettings)
 * [Add dll](#add-dll)
