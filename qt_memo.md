@@ -1,4 +1,5 @@
 # Catalog
+* [IPv6 to IPv4](#IPv6toIPv4)
 * [QCoreApplication::processEvents()](#QCoreApplicationprocessEvents)
 * [QSettings](#QSettings)
 * [Add dll](#add-dll)
@@ -7,6 +8,28 @@
 * [Qt::BlockingQueuedConnection](#QtBlockingQueuedConnection)
 * [QSqlDatabase - MySql](#QSqlDatabase---MySql)
 * [QFileDialog](#QFileDialog)
+
+## IPv6 to IPv4
+
+```cpp
+QString IPv6Tov4(QTcpSocket *sock)
+{
+    QHostAddress temphost;
+    QString sockLinkStr;
+    bool ok;
+
+    temphost.setAddress(sock->peerAddress().toIPv4Address(&ok));
+    if(ok)
+        sockLinkStr = temphost.toString();
+    else
+        sockLinkStr = sock->peerAddress().toString();
+
+    return sockLinkStr;
+}
+```
+[Top](#Catalog)  
+
+***
 
 ## QCoreApplication::processEvents()
 Processes all pending events for the calling thread according to the specified flags until<br>
