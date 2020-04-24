@@ -51,7 +51,7 @@ void PrintMsg(const char *format, ...){
 
     va_start(args, format);
     buf=(char *)malloc(length + 1);
-    vsnprintf(buf, length, format, args);
+    vsnprintf(buf, length + 1, format, args);
     va_end(args);
     
     printf("[xxx]: %s", buf);
