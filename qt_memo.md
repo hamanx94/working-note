@@ -1,4 +1,6 @@
 # Catalog
+
+* [QApplication::setAttribute()](#QApplicationsetAttribute)
 * [IPv6 to IPv4](#IPv6-to-IPv4)
 * [QCoreApplication::processEvents()](#QCoreApplicationprocessEvents)
 * [QSettings](#QSettings)
@@ -8,6 +10,18 @@
 * [Qt::BlockingQueuedConnection](#QtBlockingQueuedConnection)
 * [QSqlDatabase - MySql](#QSqlDatabase---MySql)
 * [QFileDialog](#QFileDialog)
+
+***
+
+## QApplication::setAttribute
+
+```cpp
+QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+```
+
+[Top](#Catalog)  
+
+***
 
 ## IPv6 to IPv4
 
