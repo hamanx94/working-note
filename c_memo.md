@@ -1,6 +1,6 @@
 # Catalog
 
-* [error msg](#error_msg)
+* [error msg](#error-msg)
 * [localtime](#localtime)
 * [va_list, va_start, vsnprintf, va_end](#va_list-va_start-vsnprintf-va_end)
 * [Volatile變數](#Volatile變數)
