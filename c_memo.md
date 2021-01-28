@@ -1,5 +1,6 @@
 # Catalog
 
+* [error msg](#error_msg)
 * [localtime](#localtime)
 * [va_list, va_start, vsnprintf, va_end](#va_list-va_start-vsnprintf-va_end)
 * [Volatile變數](#Volatile變數)
@@ -8,6 +9,38 @@
 * [folder content](#folder-content)
 * [create folder](#create-folder)
 * [blocking/non-blocking](#blockingnon-blocking)
+
+***
+
+## error msg
+
+```cpp
+int asprintf(char **strp, const char *fmt, ...)
+{
+    va_list args;
+//    char *buf;
+    int length;
+
+    va_start(args, fmt);
+    length = vsnprintf(NULL, 0, fmt, args);
+    va_end(args);
+
+    va_start(args, fmt);
+    *strp=(char *)malloc(length + 1);
+    vsnprintf(*strp, length + 1, fmt, args);
+    va_end(args);
+    return length;
+}
+
+#define d_SET_ERROR(message, args...)   do { \
+                                            char *cstr = NULL; \
+                                            asprintf(&cstr, message, ##args); \
+                                            set_error(cstr, __FILE__, __FUNCTION__, __LINE__); \
+                                            free(cstr); \
+                                        } while(0)
+
+```
+[Top](#Catalog)
 
 ***
 
